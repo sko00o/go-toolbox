@@ -10,7 +10,7 @@ ENV GOPROXY=https://goproxy.io,direct
 ENV GOSUMDB=gosum.io+ce6e7565+AY5qEHUk/qmHc5btzW45JVoENfazw8LielDsaI+lEbq6
 
 # HDFS client
-RUN go get github.com/colinmarc/hdfs/v2/cmd/...
+RUN go install github.com/colinmarc/hdfs/v2/cmd/hdfs@latest
 
 # Kafka consumer/producer
 RUN go install github.com/sko00o/kafka/example-kafka-go/consumer@latest
