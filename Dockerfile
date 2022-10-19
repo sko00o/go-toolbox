@@ -9,14 +9,13 @@ ENV GO111MODULE=on
 ENV GOPROXY=https://goproxy.io,direct
 ENV GOSUMDB=gosum.io+ce6e7565+AY5qEHUk/qmHc5btzW45JVoENfazw8LielDsaI+lEbq6
 
-# HDFS client
-RUN go install github.com/colinmarc/hdfs/v2/cmd/hdfs@latest
+# HDFS CLI
+RUN go install github.com/colinmarc/hdfs/v2/cmd/hdfs@v2.3.0
 
-# Kafka consumer/producer
-RUN go install github.com/sko00o/kafka/example-kafka-go/consumer@latest
-RUN go install github.com/sko00o/kafka/example-kafka-go/producer@latest
+# Kafka CLI
+RUN go install github.com/sko00o/kafka/cmd/kafka-cli@v1.0.0
 
-# nsq
+# NSQ CLI
 RUN git clone https://github.com/nsqio/nsq && cd nsq && make
 RUN rm -rf nsq
 
